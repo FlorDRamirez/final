@@ -1,0 +1,9 @@
+scikit-learn>=1.5.1
+pandas>=2.2.2
+ipykernel
+matplotlib>=3.9
+pandera>=0.20.3
+python-dotenv
+comet_ml
+streamlit
+seaborn
