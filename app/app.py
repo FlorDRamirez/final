@@ -7,7 +7,7 @@ import numpy as np
 
 def cargar_modelo_y_predecir(Area, Perimeter, Major_Axis_Length, Minor_Axis_Length, Eccentricity, Convex_Area, Extent):
     # Cargar el modelo entrenado
-    modelo = joblib.load('final/models/modeloSVM.pkl')
+    modelo = joblib.load('../models/modeloSVM.pkl')
    
     # Crear un array con las características (features)
     caracteristicas = np.array([[Area, Perimeter, Major_Axis_Length, Minor_Axis_Length, Eccentricity, Convex_Area, Extent]])
