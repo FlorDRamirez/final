@@ -120,7 +120,9 @@ with col1:
         
             <div>
                 <h2>Clasificador de Arroz🌾</h2>
-                <p>Entre las variedades de arroz certificado cultivado en TURQUÍA, se han seleccionado para el estudio dos variedades. La variedad Osmancik, que tiene una gran superficie de plantación desde 1997, y la variedad Cammeo cultivada desde 2014. Al observar las características generales, la especie Osmancik, tienen una apariencia ancha, larga, vidriosa y opaca. Al observar las características generales de la especie Cammeo, tienen una apariencia ancha y larga, vidriosa y opaca. Se tomaron un total de 3810 imágenes de granos de arroz para las dos especies, se procesaron y se realizaron inferencias de características. Se obtuvieron 7 características morfológicas para cada grano de arroz.</p>
+                <p>Entre las variedades de arroz certificado cultivado en TURQUÍA, se han seleccionado para el estudio dos variedades. La variedad Osmancik, que tiene una gran superficie de plantación desde 1997, y la variedad Cammeo cultivada desde 2014.</p>
+                <p>Al observar las características generales, la especie Osmancik, tienen una apariencia ancha, larga, vidriosa y opaca y al observar las características generales de la especie Cammeo, tienen caracteristicas similares (ancha, larga, vidriosa y opaca).</p>
+                <p>Se tomaron un total de 3810 imágenes de granos de arroz para las dos especies, se procesaron y se realizaron inferencias de características. Se obtuvieron 7 características morfológicas para cada grano de arroz.</p>
             </div>
        
         """,
@@ -135,20 +137,20 @@ with col2:
 
 
     # Cargar el dataset
-    try:
-        df = pd.read_csv('final/data/processed/Ricedataprocesada.csv')
+    #try:
+    #    df = pd.read_csv('final/data/processed/Ricedataprocesada.csv')
    
         # Aplicar estilo a la tabla
-        def color_background(val):
-            color = '#e2f7f5'  # Color verde agua (Aquamarine)
-            return f'background-color: {color}'
+    #    def color_background(val):
+    #        color = '#e2f7f5'  # Color verde agua (Aquamarine)
+    #        return f'background-color: {color}'
    
-        st.write("## Dataset de arroz procesado")
-        st.dataframe(df.style.applymap(color_background), height=200)  # Aplicar color personalizado a toda la tabla
+    #    st.write("## Dataset de arroz procesado")
+    #    st.dataframe(df.style.applymap(color_background), height=200)  # Aplicar color personalizado a toda la tabla
    
         #st.dataframe(df.style.highlight_max(axis=0))  # Aplicar estilo para destacar máximos
-    except FileNotFoundError:
-        st.error("El archivo Ricedataprocesada.csv no se encontró en la ruta especificada.")
+    #except FileNotFoundError:
+    #    st.error("El archivo Ricedataprocesada.csv no se encontró en la ruta especificada.")
 
 
     # Separador visual
