@@ -3,11 +3,19 @@ import streamlit as st
 import pandas as pd
 import joblib
 import numpy as np
-
+import os
 
 def cargar_modelo_y_predecir(Area, Perimeter, Major_Axis_Length, Minor_Axis_Length, Eccentricity, Convex_Area, Extent):
+    # Obtener la ruta absoluta del archivo
+    modelo_path = os.path.join(os.path.dirname(__file__), '../models/modeloSVM.pkl')
+
     # Cargar el modelo entrenado
-    modelo = joblib.load('../models/modeloSVM.pkl')
+    modelo = joblib.load(modelo_path)
+    
+    
+    
+    # Cargar el modelo entrenado
+    #modelo = joblib.load('final/models/modeloSVM.pkl')
    
     # Crear un array con las características (features)
     caracteristicas = np.array([[Area, Perimeter, Major_Axis_Length, Minor_Axis_Length, Eccentricity, Convex_Area, Extent]])
@@ -119,12 +127,12 @@ with col1:
         """
         
             <div>
-                <h2>Clasificador de Arroz🌾</h2>
+                <h2>Clasificador de Arroz</h2>
                 <p>Entre las variedades de arroz certificado cultivado en TURQUÍA, se han seleccionado para el estudio dos variedades. La variedad Osmancik, que tiene una gran superficie de plantación desde 1997, y la variedad Cammeo cultivada desde 2014.</p>
                 <p>Al observar las características generales, la especie Osmancik, tienen una apariencia ancha, larga, vidriosa y opaca y al observar las características generales de la especie Cammeo, tienen caracteristicas similares (ancha, larga, vidriosa y opaca).</p>
                 <p>Se tomaron un total de 3810 imágenes de granos de arroz para las dos especies, se procesaron y se realizaron inferencias de características. Se obtuvieron 7 características morfológicas para cada grano de arroz.</p>
             </div>
-       
+        
         """,
         unsafe_allow_html=True
     )
@@ -132,25 +140,28 @@ with col1:
 
 with col2:
     # Título principal
-    st.markdown("<h1 style='text-align: center;'>Clasificador de Arroz🍚</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Clasificador de Arroz</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size:20px;'>Detectar entre dos variedades de arroz turco: <b>Cammeo</b> y <b>Osmancik</b></p>", unsafe_allow_html=True)
 
 
     # Cargar el dataset
-    #try:
-    #    df = pd.read_csv('final/data/processed/Ricedataprocesada.csv')
+    
+    csv_path = os.path.join(os.path.dirname(__file__), '../data/processed/Ricedataprocesada.csv')
+
+    try:
+        df = pd.read_csv(csv_path)
    
         # Aplicar estilo a la tabla
-    #    def color_background(val):
-    #        color = '#e2f7f5'  # Color verde agua (Aquamarine)
-    #        return f'background-color: {color}'
+        def color_background(val):
+            color = '#e2f7f5'  # Color verde agua (Aquamarine)
+            return f'background-color: {color}'
    
-    #    st.write("## Dataset de arroz procesado")
-    #    st.dataframe(df.style.applymap(color_background), height=200)  # Aplicar color personalizado a toda la tabla
+        st.write("## Dataset de arroz procesado")
+        st.dataframe(df.style.applymap(color_background), height=200)  # Aplicar color personalizado a toda la tabla
    
         #st.dataframe(df.style.highlight_max(axis=0))  # Aplicar estilo para destacar máximos
-    #except FileNotFoundError:
-    #    st.error("El archivo Ricedataprocesada.csv no se encontró en la ruta especificada.")
+    except FileNotFoundError:
+        st.error("El archivo Ricedataprocesada.csv no se encontró en la ruta especificada.")
 
 
     # Separador visual
