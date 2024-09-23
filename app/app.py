@@ -127,11 +127,20 @@ with col1:
         """
         
             <div>
-                <h2>Clasificador de Arroz</h2>
+                <h2>Clasificador de Arroz🍚</h2>
                 <p>Entre las variedades de arroz certificado cultivado en TURQUÍA, se han seleccionado para el estudio dos variedades. La variedad Osmancik, que tiene una gran superficie de plantación desde 1997, y la variedad Cammeo cultivada desde 2014.</p>
                 <p>Al observar las características generales, la especie Osmancik, tienen una apariencia ancha, larga, vidriosa y opaca y al observar las características generales de la especie Cammeo, tienen caracteristicas similares (ancha, larga, vidriosa y opaca).</p>
                 <p>Se tomaron un total de 3810 imágenes de granos de arroz para las dos especies, se procesaron y se realizaron inferencias de características. Se obtuvieron 7 características morfológicas para cada grano de arroz.</p>
+                <br>
+                <br>
             </div>
+            
+            <div>
+                <p>Los datos utilizados en esta aplicación provienen del repositorio UCI Machine Learning Repository: Dua, D. and Graff, C. (2019). UCI Machine Learning Repository: <a href="https://archive.ics.uci.edu/dataset/545/rice+cammeo+and+osmancik" target="_blank">. Irvine, CA: University of California, School of Information and Computer Science.</p>
+            </div>
+        
+
+        
         
         """,
         unsafe_allow_html=True
@@ -140,7 +149,7 @@ with col1:
 
 with col2:
     # Título principal
-    st.markdown("<h1 style='text-align: center;'>Clasificador de Arroz</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>Clasificador de Arroz🌾</h1>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center; font-size:20px;'>Detectar entre dos variedades de arroz turco: <b>Cammeo</b> y <b>Osmancik</b></p>", unsafe_allow_html=True)
 
 
